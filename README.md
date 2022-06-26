@@ -26,7 +26,7 @@ The self-attention scores form a long-tail distribution, where the "active" quer
 
 `Why not use Top-u keys?` The self-attention layer's output is the re-represent of input. It is formulated as a weighted combination of values w.r.t. the score of dot-product pairs. The top queries with full keys encourage a complete re-represent of leading components in the input, and it is equivalent to selecting the "head" scores among all the dot-product pairs. If we choose Top-u keys, the full keys just preserve the trivial sum of values within the "long tail" scores but wreck the leading components' re-represent.  
   
-[メモ] Top-u keysを(そのまま)使うと'long tail' なscoreのすべてを温存することになり、re-represent である leading componentsを明後日の方向に行かせ(wreck)てしまう  
+[メモ] Top-u keysを(そのまま)使うと'long tail' なscoreのすべてを温存(preserve)することになり、re-represent である leading componentsを明後日の方向に行かせ(wreck)てしまう  
   
 <p align="center">
 <img src=".\img\probsparse_intro.png" height = "320" alt="" align=center />
